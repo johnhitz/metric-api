@@ -3,8 +3,8 @@ const Customer = require('./customer')
 
 const resolvers = {
   Query: {
-    products: () => Products.find({}),
-    customers: () => Customers.find({})
+    products: () => Product.find({}),
+    customers: () => Customer.find({})
   },
 
   Mutation: {

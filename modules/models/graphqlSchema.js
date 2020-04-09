@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Product {
     _id: ID,
     name: String,
+    rate_per_acer: Int,
     multiplier: Int,
     bill_unit: String,
     price_per: Float
