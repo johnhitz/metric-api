@@ -1,8 +1,10 @@
 const Product = require('./product')
+const Customer = require('./customer')
 
 const resolvers = {
   Query: {
-    products: () => Products.find({})
+    products: () => { return Products.find({}) },
+    customers: () => { return Customers.find({}) }
   },
 
   Mutation: {
@@ -15,6 +17,16 @@ const resolvers = {
         price_per: product.price_per
       })
       return newProduct.save()
+    },
+    // updateProduct: (parent, ) => {}
+
+    addCustomer: (parent, customer) => {
+      const newCustomer = new Customer({
+        name: customer.name,
+        contact: customer.contact,
+        name: customer.location
+      })
+      return newCustomer.save()
     }
   }
 }
