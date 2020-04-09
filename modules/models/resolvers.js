@@ -3,8 +3,8 @@ const Customer = require('./customer')
 
 const resolvers = {
   Query: {
-    products: () => { return Products.find({}) },
-    customers: () => { return Customers.find({}) }
+    products: () => Products.find({}),
+    customers: () => Customers.find({})
   },
 
   Mutation: {
@@ -24,7 +24,7 @@ const resolvers = {
       const newCustomer = new Customer({
         name: customer.name,
         contact: customer.contact,
-        name: customer.location
+        location: customer.location
       })
       return newCustomer.save()
     }
