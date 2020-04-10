@@ -19,11 +19,7 @@ const typeDefs = gql`
     products: [Product],
     product(id: ID!): Product,
     customers: [Customer],
-    customer(
-      id: ID,
-      name: String,
-      contact: String,
-      location: String): Customer
+    customer (id: ID, name: String, contact: String): Customer
   },
   type Mutation {
     addProduct(

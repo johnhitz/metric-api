@@ -6,9 +6,9 @@ const resolvers = {
     products: () => Product.find({}),
     product: (_, args) => Product.findById(args.id),
     customers: () => Customer.find({}),
-    customer: (_, args) => {
-      console.log({...args});
-      Customer.find({...args})
+    customer: async (_, args) => {
+      const customers = await Customer.find({...args}).exec()
+      return customers[0]
     }
   },
 

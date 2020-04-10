@@ -1,5 +1,6 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const cors = require('cors')
 // const gqlHTTP = require("express-graphql");
 const { makeExecutableSchema } = require('graphql-tools')
 
@@ -15,6 +16,20 @@ const server = new ApolloServer({ typeDefs, resolvers });
 const PORT = process.env.PORT || 3333
 
 const app = express();
+
+// Middleware
+app.use(express.json())
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist) {
+      callback(null, true)
+    } else {
+      callback(new Error('not allowed by CORS'))
+    }
+  }
+}
+app.use(cors())
 
 // app.use("/graphql", gqlHTTP({
 //   schema: schema,
