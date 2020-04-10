@@ -12,13 +12,14 @@ const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-const PORT = 3333
+const PORT = process.env.PORT || 3333
 
 const app = express();
 
-app.use(
-  "/graphql",
-  gqlHTTP({ schema: schema, rootValue: root, graphiql: true })
+app.use("/graphql", gqlHTTP({
+  schema: schema,
+  rootValue: root,
+  graphiql: true })
 );
 
 server.applyMiddleware({ app });

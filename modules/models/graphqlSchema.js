@@ -14,13 +14,27 @@ const typeDefs = gql`
     name: String,
     contact: String,
     location: String
-  }
+  },
   type Query {
     products: [Product],
-    customers: [Customer]
+    product: Product,
+    customers: [Customer],
+    customer: Customer
   },
   type Mutation {
-    addProduct(name: String!, multiplier: Int!, bill_unit: String!, price_per: Float!): Product,
+    addProduct(
+      name: String!,
+      multiplier: Int!,
+      bill_unit: String!,
+      price_per: Float!): Product,
+
+    updateProduct(
+      name: String!,
+      rate_per_acer: Int,
+      multiplier: Int,
+      bill_unit: String,
+      price_per: Float
+    ): Product
 
 
     addCustomer(name: String!, contact: String!, location: String!): Customer

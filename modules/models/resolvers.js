@@ -3,7 +3,15 @@ const Customer = require('./customer')
 
 const resolvers = {
   Query: {
-    products: () => Product.find({}),
+    products: () => {
+      console.log("WTF? Over!");
+      return Product.find({})
+    },
+    product: () => {
+      console.log("I'm alive!");
+      return Product.findById({_id: ID})
+      // return Product.find({})
+    },
     customers: () => Customer.find({})
   },
 
@@ -18,7 +26,16 @@ const resolvers = {
       })
       return newProduct.save()
     },
-    // updateProduct: (parent, ) => {}
+    // updateProduct: (parent, product) => {
+    //   const updatedProduct({
+    //     args: {_id: product.id,
+    //       name: product.name,
+    //       rate_per_acer: product.rate_per_acer,
+    //       multiplier: product.bill_unit,
+    //       price_per: product.price_per}
+    //   })
+    //   return Product.findByAndUpdate(product.id, args)
+    // }
 
     addCustomer: (parent, customer) => {
       const newCustomer = new Customer({
