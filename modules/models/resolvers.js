@@ -4,13 +4,12 @@ const Customer = require('./customer')
 const resolvers = {
   Query: {
     products: () => Product.find({}),
-    product: (_, args) => {
-      console.log("I'm alive!");
-      return Product.findById(args.id)
-      // return Product.find({})
-    },
+    product: (_, args) => Product.findById(args.id),
     customers: () => Customer.find({}),
-    customer: () => Customer.find({})
+    customer: (_, args) => {
+      console.log({...args});
+      Customer.find({...args})
+    }
   },
 
   Mutation: {
