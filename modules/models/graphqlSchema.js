@@ -16,8 +16,7 @@ const typeDefs = gql`
     cell_phone: String,
     home_phone: String,
     alt_phone: String,
-    email: String,
-    location: String
+    email: String
   },
   type Query {
     products: [Product],
@@ -47,8 +46,7 @@ const typeDefs = gql`
       cell_phone: String,
       home_phone: String,
       alt_phone: String,
-      email: String,
-      location: String!): Customer
+      email: String): Customer
   }
 `
 

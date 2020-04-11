@@ -41,8 +41,7 @@ const resolvers = {
         cell_phone: customer.cell_phone,
         home_phone: customer.home_phone,
         alt_phone: customer.alt_phone,
-        email: customer.email,
-        location: customer.location
+        email: customer.email
       })
       return newCustomer.save()
     },

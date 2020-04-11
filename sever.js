@@ -102,7 +102,7 @@ app.get('/customers', (req, res) => {
   })
   .then((result) => {
     response = result.data
-    console.log(response.data.customers);
+    // console.log(response.data.customers);
     res.send(response.data.customers)
   })
 })

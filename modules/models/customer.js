@@ -7,7 +7,6 @@ const customerSchema = new Schema({
   home_phone: String,
   alt_phone: String,
   email: String,
-  location: String,
 })
 
   const Customer = model('customer', customerSchema)
