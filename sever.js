@@ -53,7 +53,7 @@ app.get('/customer/name/:name/', (req, res) => {
   console.log(req.params.name);
   axios({
     url: `http://localhost:3333/graphql`,
-    method: 'post',
+    method: 'POST',
     data: {
       query: `
         query {
@@ -73,6 +73,31 @@ app.get('/customer/name/:name/', (req, res) => {
     res.send(response.data.customer)
   })
 })
+
+app.get('/customers', (req, res) => {
+  let response = null
+  axios({
+    url: `http://localhost:3333/graphql`,
+    method: 'POST',
+    data: {
+      query: `
+        query{
+          customers{
+            _id
+            name
+            contact
+            location
+          }
+        }
+      `
+    }
+  })
+  .then((result) => {
+    response = result.data
+    res.send(response.data)
+  })
+})
+
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}${server.graphqlPath}`);
