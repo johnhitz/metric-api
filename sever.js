@@ -61,7 +61,6 @@ app.get('/customer/name/:name/', (req, res) => {
             _id
             name
             contact
-            location
             cell_phone
             home_phone
             alt_phone
@@ -90,7 +89,6 @@ app.get('/customers', (req, res) => {
             _id
             name
             contact
-            location
             cell_phone
             home_phone
             alt_phone
