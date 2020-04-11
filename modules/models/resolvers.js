@@ -38,10 +38,14 @@ const resolvers = {
       const newCustomer = new Customer({
         name: customer.name,
         contact: customer.contact,
+        cell_phone: customer.cell_phone,
+        home_phone: customer.home_phone,
+        alt_phone: customer.alt_phone,
+        email: customer.email,
         location: customer.location
       })
       return newCustomer.save()
-    }
+    },
   }
 }
 

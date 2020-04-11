@@ -58,9 +58,14 @@ app.get('/customer/name/:name/', (req, res) => {
       query: `
         query {
           customer(name: "${req.params.name}"){
+            _id
             name
             contact
             location
+            cell_phone
+            home_phone
+            alt_phone
+            email
           }
         }
       `
@@ -69,7 +74,6 @@ app.get('/customer/name/:name/', (req, res) => {
   .then((result) => {
     response = result.data
     console.log(response.data)
-    console.log(req.query.thing);
     res.send(response.data.customer)
   })
 })
@@ -87,6 +91,10 @@ app.get('/customers', (req, res) => {
             name
             contact
             location
+            cell_phone
+            home_phone
+            alt_phone
+            email
           }
         }
       `
@@ -94,7 +102,8 @@ app.get('/customers', (req, res) => {
   })
   .then((result) => {
     response = result.data
-    res.send(response.data)
+    console.log(response.data.customers);
+    res.send(response.data.customers)
   })
 })
 
