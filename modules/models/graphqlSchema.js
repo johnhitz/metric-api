@@ -4,10 +4,8 @@ const typeDefs = gql`
   type Product {
     _id: ID,
     name: String,
-    rate_per_acer: Int,
-    multiplier: Int,
     bill_unit: String,
-    price_per: Float
+    price_per_acer: Int
   },
   type Customer {
     _id: ID,
@@ -27,9 +25,8 @@ const typeDefs = gql`
   type Mutation {
     addProduct(
       name: String!,
-      multiplier: Int!,
       bill_unit: String!,
-      price_per: Float!): Product,
+      price_per_acer: Float!): Product,
 
     updateProduct(
       name: String!,

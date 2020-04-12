@@ -16,10 +16,8 @@ const resolvers = {
     addProduct: (parent, product) => {
       const newProduct = new Product({
         name: product.name,
-        rate_per_acer: product.rate_per_acer,
-        multiplier: product.multiplier,
         bill_unit: product.bill_unit,
-        price_per: product.price_per
+        price_per_acer: product.price_per_acer
       })
       return newProduct.save()
     },

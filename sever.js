@@ -48,41 +48,41 @@ server.applyMiddleware({ app });
 /********************************************
 Routes
 ********************************************/
-// app.post('/customer/add/:name/:contact/:cell_phone/:home_phone/:alt_phone/:email', (req, res) => {
-//   let response = null
-//   console.log("Added new customer: ", req.params.name);
-//   axios({
-//     url: `http://localhost:3333/graphql`,
-//     method: 'POST',
-//     data: {
-//       query: `
-//         mutation {
-//           addCustomer(
-//             name: "${req.params.name}",
-//             contact: "${req.params.contact}",
-//             cell_phone: "${req.params.cell_phone}",
-//             home_phone: "${req.params.home_phone}",
-//             alt_phone: "${req.params.alt_phone}",
-//             email: "${req.params.email}"
-//           ){
-//             _id
-//             name
-//             contact
-//             cell_phone
-//             home_phone
-//             alt_phone
-//             email
-//           }
-//         }
-//       `
-//     }
-//   })
-//   .then((result) => {
-//     response = result.data
-//     console.log(response.data)
-//     res.send(response.data.customer)
-//   })
-// })
+app.post('/customer/add/name/contact/cell_phone/home_phone/alt_phone/email', (req, res) => {
+  let response = null
+  console.log("Added new customer: ", req.params.name);
+  axios({
+    url: `http://localhost:3333/graphql`,
+    method: 'POST',
+    data: {
+      query: `
+        mutation {
+          addCustomer(
+            name: "${req.params.name}",
+            contact: "${req.params.contact}",
+            cell_phone: "${req.params.cell_phone}",
+            home_phone: "${req.params.home_phone}",
+            alt_phone: "${req.params.alt_phone}",
+            email: "${req.params.email}"
+          ){
+            _id
+            name
+            contact
+            cell_phone
+            home_phone
+            alt_phone
+            email
+          }
+        }
+      `
+    }
+  })
+  .then((result) => {
+    response = result.data
+    console.log(response.data)
+    res.send(response.data.customer)
+  })
+})
 app.get('/customer/name/:name/', (req, res) => {
   let response = null
   console.log(req.params.name);
@@ -151,10 +151,8 @@ app.get('/products', (req, res) => {
           products{
             _id
             name
-            rate_per_acer
-            multiplier
             bill_unit
-            price_per
+            price_per_acer
           }
         }
       `

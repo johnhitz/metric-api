@@ -2,10 +2,16 @@ const { Schema, model } = require('mongoose');
 
 const productSchema = new Schema({
   name: String,
-  rate_per_acer: Number,
-  multiplier: Number, // Unit (eg dry oz = 16, fl oz = 128, lbs = 16)
+  // rate_per_acer: Number,
+  /*//////////////////////////////////////////////
+  Multiplier is the nuber used to convert units per acer
+  to billing units
+  Eg. If the product is used at 3 oz per acer and sold by the
+  pound then the (3 / 16) * cost/lbs so the multiplier is 1/16 or 0.00625
+  //////////////////////////////////////////////*/
+  // multiplier: Number, // Unit (eg dry oz = 16, fl oz = 128, lbs = 16)
   bill_unit: String,
-  price_per: Number,
+  price_per_acer: Number
 })
 
 const Product = model('product', productSchema)
