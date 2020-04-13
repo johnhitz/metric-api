@@ -152,7 +152,7 @@ app.get('/products', (req, res) => {
             _id
             name
             bill_unit
-            price_per_acer
+            price_per_acre
           }
         }
       `

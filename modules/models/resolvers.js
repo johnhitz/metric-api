@@ -17,7 +17,7 @@ const resolvers = {
       const newProduct = new Product({
         name: product.name,
         bill_unit: product.bill_unit,
-        price_per_acer: product.price_per_acer
+        price_per_acre: product.price_per_acre
       })
       return newProduct.save()
     },
@@ -25,7 +25,7 @@ const resolvers = {
     //   const updatedProduct({
     //     args: {_id: product.id,
     //       name: product.name,
-    //       rate_per_acer: product.rate_per_acer,
+    //       rate_per_acre: product.rate_per_acre,
     //       multiplier: product.bill_unit,
     //       price_per: product.price_per}
     //   })

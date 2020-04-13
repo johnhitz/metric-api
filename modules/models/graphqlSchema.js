@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID,
     name: String,
     bill_unit: String,
-    price_per_acer: Int
+    price_per_acre: Float
   },
   type Customer {
     _id: ID,
@@ -26,14 +26,12 @@ const typeDefs = gql`
     addProduct(
       name: String!,
       bill_unit: String!,
-      price_per_acer: Float!): Product,
+      price_per_acre: Float!): Product,
 
     updateProduct(
       name: String!,
-      rate_per_acer: Int,
-      multiplier: Int,
       bill_unit: String,
-      price_per: Float
+      price_per_acre: Float
     ): Product
 
 
