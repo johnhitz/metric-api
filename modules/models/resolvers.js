@@ -25,7 +25,7 @@ const resolvers = {
     //   const updatedProduct({
     //     args: {_id: product.id,
     //       name: product.name,
-    //       rate_per_acre: product.rate_per_acre,
+    //       acre_acre: product.acre_acre,
     //       multiplier: product.bill_unit,
     //       price_per: product.price_per}
     //   })

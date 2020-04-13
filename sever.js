@@ -48,7 +48,9 @@ server.applyMiddleware({ app });
 /********************************************
 Routes
 ********************************************/
-app.post('/customer/add/name/contact/cell_phone/home_phone/alt_phone/email', (req, res) => {
+
+app.post('/customer/add/:name/:contact/:cell_phone/:home_phone/:alt_phone/:email', (req, res) => {
+  console.log(`Stop touching me!`);
   let response = null
   console.log("Added new customer: ", req.params.name);
   axios({
@@ -84,6 +86,7 @@ app.post('/customer/add/name/contact/cell_phone/home_phone/alt_phone/email', (re
   })
 })
 app.get('/customer/name/:name/', (req, res) => {
+  console.log("name");
   let response = null
   console.log(req.params.name);
   axios({
@@ -113,6 +116,7 @@ app.get('/customer/name/:name/', (req, res) => {
 })
 
 app.get('/customers', (req, res) => {
+  console.log("customers");
   let response = null
   axios({
     url: `http://localhost:3333/graphql`,
@@ -141,6 +145,7 @@ app.get('/customers', (req, res) => {
 })
 
 app.get('/products', (req, res) => {
+  console.log("products");
   let response = null
   axios({
     url: `http://localhost:3333/graphql`,

@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const productSchema = new Schema({
   name: String,
-  // rate_per_acre: Number,
+  // acre_acre: Number,
   /*//////////////////////////////////////////////
   Multiplier is the nuber used to convert units per acre
   to billing units
